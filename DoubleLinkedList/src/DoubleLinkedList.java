@@ -53,8 +53,8 @@ public class DoubleLinkedList<Type extends Comparable> {
     }
 
     public void insetAtPosition(Type data, int position) {
-        if (position > size && position < 0) {
-            throw new IllegalStateException("Position must be less than or equal to size of linked list or less than 0");
+        if (position > size || position < 0) {
+            throw new NullPointerException("Position must be less than or equal to size of linked list or greater than 0");
         } else {
             if (position == 1)
                 addToFirst(data);
@@ -95,7 +95,7 @@ public class DoubleLinkedList<Type extends Comparable> {
     }
 
     public void deleteAtFirst() {
-        if (start == null && end == null) {
+        if (start == null || end == null) {
             throw new IllegalStateException("Linked List is Empty");
         } else {
             start = start.next;
@@ -104,7 +104,7 @@ public class DoubleLinkedList<Type extends Comparable> {
     }
 
     public void deleteAtLast() {
-        if (start == null && end == null) {
+        if (start == null || end == null) {
             throw new IllegalStateException("Linked List is Empty");
         } else {
             end = end.previous;
@@ -113,7 +113,7 @@ public class DoubleLinkedList<Type extends Comparable> {
     }
 
     public void deleteAtPosition(int position) {
-        if (position > size && position < 0) {
+        if (position > size || position < 0) {
             throw new IllegalStateException("Position must be less than or equal to size of linked list or less than 0");
         } else {
             Node loop = start;
