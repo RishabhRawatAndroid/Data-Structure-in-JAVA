@@ -4,7 +4,9 @@ public class MainClass {
 
 
         DoubleLinkedList<String> linkedList=new DoubleLinkedList<>();
-        linkedList.insetAtPosition("hello",45);
+        linkedList.addToFirst("hello");
+        linkedList.addToLast("Rishabh");
+        System.out.println("Data at "+linkedList.dataAtPosition(3));
 
     }
 }

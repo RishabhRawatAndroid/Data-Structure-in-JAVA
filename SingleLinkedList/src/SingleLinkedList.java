@@ -68,7 +68,7 @@ public class SingleLinkedList<Type extends Comparable> {
     }
 
     public void deleteAtFirst() {
-        if (start == null && end == null) {
+        if (start == null || end == null) {
             throw new IllegalCallerException("Your linked list is Empty");
         } else {
             start = start.next;
@@ -77,7 +77,7 @@ public class SingleLinkedList<Type extends Comparable> {
     }
 
     public void deleteAtLast() {
-        if (start == null && end == null) {
+        if (start == null || end == null) {
             throw new IllegalCallerException("Your linked list is Empty");
         } else {
             Node<Type> newnode = start;

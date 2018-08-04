@@ -128,5 +128,27 @@ public class DoubleLinkedList<Type extends Comparable> {
         }
     }
 
+    public Type dataAtPosition(int position) {
+        if (position > size || position < 0) {
+            throw new NullPointerException("Position must be less than or equal to size of linked list or less than 0");
+        } else {
+            Node<Type> loop = start;
+            for (int i = 1; i <= position - 1; i++) {
+                loop = loop.next;
+            }
+            return loop.data;
+        }
+    }
+
+    public boolean isEmpty() {
+        if (size == 0)
+            return true;
+        else
+            return false;
+    }
+
+    public int getSize() {
+        return size;
+    }
 
 }
