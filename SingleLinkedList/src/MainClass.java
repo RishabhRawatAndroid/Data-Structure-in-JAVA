@@ -7,10 +7,9 @@ public class MainClass {
         singleLinkedList.addtoLast(101);
         singleLinkedList.addtoLast(102);
         singleLinkedList.addtoFirstArrayParms(1,2,3,4,5,6,7,8,9,10);
-        singleLinkedList.iterateLinkedList();
-        singleLinkedList.reverseList();
-        singleLinkedList.iterateLinkedList();
-
+       singleLinkedList.forwardprint(singleLinkedList.getStartNode());
+        System.out.println();
+       singleLinkedList.reverseprint(singleLinkedList.getStartNode());
     }
 }
 

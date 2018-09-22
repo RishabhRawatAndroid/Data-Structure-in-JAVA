@@ -35,7 +35,7 @@ public class SingleLinkedList<Type extends Comparable> {
             end = newnode;
             size++;
         } else {
-            Node<Type> newnode = new Node<>(end, data);
+            Node<Type> newnode = new Node<>(null, data);
             end.next = newnode;
             end = newnode;
             size++;
@@ -85,6 +85,7 @@ public class SingleLinkedList<Type extends Comparable> {
                 newnode = newnode.next;
             }
             end = newnode;
+            end.next=null;
             size--;
         }
     }
@@ -158,6 +159,28 @@ public class SingleLinkedList<Type extends Comparable> {
             temp.data = data;
             temp = temp.next;
         }
+    }
+
+    public void forwardprint(Node node)
+    {
+        if(node==null)
+            return;
+        System.out.print(node.data+"->");
+        forwardprint(node.next);
+    }
+
+
+    public void reverseprint(Node node)
+    {
+        if(node==null)
+            return;
+        reverseprint(node.next);
+        System.out.print(node.data+"->");
+    }
+
+    public Node getStartNode()
+    {
+        return start;
     }
 
 
